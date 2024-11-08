@@ -12,7 +12,7 @@
 
     <div class="input-group">
       <label for="password">Password: </label>
-      <input id="password" formControlName="password" type="text" />
+      <input id="password" formControlName="password" type="password" />
       <span *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched" class="input-error">
         Password required
       </span>
