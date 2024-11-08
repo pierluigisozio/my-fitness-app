@@ -20,4 +20,11 @@ export class UserService {
     return this.http.post(`${this.baseUrl}/logout/`, payload)
   }
 
+  payloadFormatter(username: string, password: string) : IUserPayload {
+    return {
+      username,
+      password
+    }
+  }
+
 }

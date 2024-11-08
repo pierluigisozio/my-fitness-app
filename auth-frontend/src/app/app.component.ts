@@ -10,5 +10,5 @@ import {HomepageComponent} from './components/homepage/homepage.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'auth-frontend';
+  title = 'My Fitness App';
 }
