@@ -11,16 +11,16 @@ node_modules/
 __pycache__/
 
 # Gitignore for backend (Django)
-/auth-project/auth_project/__pycache__/
-/auth-project/users/__pycache__/
-/auth-project/*.sqlite3
-/auth-project/db.sqlite3
-/auth-project/media/
-/auth-project/static/
-/auth-project/.env
-/auth-project/*.log
-/auth-project/*.pyc
-/auth-project/__pycache__/
+/auth_project/auth_project/__pycache__/
+/auth_project/users/__pycache__/
+/auth_project/*.sqlite3
+/auth_project/db.sqlite3
+/auth_project/media/
+/auth_project/static/
+/auth_project/.env
+/auth_project/*.log
+/auth_project/*.pyc
+/auth_project/__pycache__/
 
 # Gitignore for frontend (Angular)
 /auth-frontend/node_modules/
@@ -31,7 +31,7 @@ __pycache__/
 /auth-frontend/src/assets/*.bak
 
 # Gitignore for specific build or IDE files
-/auth-project/.mypy_cache/
-/auth-project/.pytest_cache/
+/auth_project/.mypy_cache/
+/auth_project/.pytest_cache/
 /auth-frontend/.npm/
 /auth-frontend/.cache/
