@@ -45,7 +45,6 @@ export class RegisterComponent {
     }
   }
   goToPage(page: string){
-    //this.navigationService.redirectTo(page);
-    this.navigationService.redirectTo('login', {fromRegistration : 'true'})
+    this.navigationService.redirectTo(page);
   }
 }
