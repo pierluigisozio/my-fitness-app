@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
-from utils import is_valid_password
+from .utils import is_valid_password
 
 
 @api_view(['POST'])
