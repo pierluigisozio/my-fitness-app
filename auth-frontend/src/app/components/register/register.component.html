@@ -1,11 +1,13 @@
-<ng-container>
+<main class="form-container">
   <h1>Registration</h1>
-  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="app-form">
 
     <div class="input-group">
       <label for="username">Username: </label>
-      <input id="username" formControlName="username" type="text"/>
-      <span *ngIf="registrationForm.get('username')?.invalid && registrationForm.get('username')?.touched" class="input-error">
+      <input id="username" formControlName="username" type="text" autocomplete="off"/>
+      <span
+        [ngClass]="{ 'input-error': registrationForm.get('username')?.invalid && registrationForm.get('username')?.touched,
+        'hidden-error': !(registrationForm.get('username')?.invalid && registrationForm.get('username')?.touched) }">
         Username required
       </span>
     </div>
@@ -13,13 +15,17 @@
     <div class="input-group">
       <label for="password">Password: </label>
       <input id="password" formControlName="password" type="password" />
-      <span *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched" class="input-error">
+      <span
+        [ngClass]="{ 'input-error': registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched,
+        'hidden-error': !(registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched) }">
         Password required
       </span>
     </div>
 
-    <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+    <div class="button-container">
+      <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+      <button (click)="goToPage('home')">Go Back</button>
+    </div>
 
   </form>
-  <button (click)="goToPage('home')">Go Back</button>
-</ng-container>
+</main>

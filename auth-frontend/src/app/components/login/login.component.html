@@ -1,28 +1,37 @@
-<ng-container>
+<main>
   <h1>Login</h1>
-  <p *ngIf="fromRegistration">
-    <span>Registration completed. </span>
+  <p *ngIf="fromRegistration" class="subtitle">
+    <span>Registration completed</span>
+  </p>
+  <p *ngIf="!fromRegistration" class="subtitle">
     <span>Login to access app</span>
   </p>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="app-form">
 
     <div class="input-group">
       <label for="username">Username: </label>
-      <input id="username" formControlName="username" type="text"/>
-      <span *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="input-error">
+      <input id="username" formControlName="username" type="text" autocomplete="off"/>
+      <span 
+      [ngClass]="{ 'input-error': loginForm.get('username')?.invalid && loginForm.get('username')?.touched,
+        'hidden-error': !(loginForm.get('username')?.invalid && loginForm.get('username')?.touched)}">
         Username Required
       </span>
     </div>
 
     <div class="input-group">
       <label for="password">Password</label>
-      <input id="password" formControlName="password" type="password"/>
-      <span *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+      <input id="password" formControlName="password" type="password" />
+      <span 
+      [ngClass]="{ 'input-error': loginForm.get('password')?.invalid && loginForm.get('password')?.touched,
+      'hidden-error': !(loginForm.get('password')?.invalid && loginForm.get('password')?.touched)}">
+
         Password required
       </span>
     </div>
 
-    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    <div class="button-container">
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      <button (click)="goToPage('home')" >Go Back</button>
+    </div>
   </form>
-  <button (click)="goToPage('home')" >Go Back</button>
-</ng-container>
+</main>
